@@ -1,0 +1,38 @@
+﻿@model CodeShare.Models.ViewFileModel
+
+@{
+    ViewBag.Title = "ViewFile";
+}
+<div>
+    <h2>@Model.Details.Name</h2>
+
+    <div>
+        <hr />
+        <textarea class="code-textarea">
+        @Model.Data
+    </textarea>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Details.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Details.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Details.CreatedAt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Details.CreatedAt)
+                <p>
+                    @Html.ActionLink("Back to List", "Main")
+                </p>
+
+            </dd>
+
+        </dl>
+    </div>
+
+</div>

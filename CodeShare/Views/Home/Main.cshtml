@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "CodeShare";
+}
+
+
+<main role="main" class="inner cover">
+    <h1 class="cover-heading">Hello @User.Identity.GetUserName()</h1>
+    <p class="lead">What would you like to do</p>
+    <p class="lead">
+        @Html.ActionLink("Upload Public File", "PublicFile", "Upload", routeValues: null, htmlAttributes: new { @class = "btn btn-lg btn-secondary" })
+        @Html.ActionLink("Upload Private File", "File", "Upload", routeValues: null, htmlAttributes: new { @class = "btn btn-lg btn-secondary" })
+    </p>
+    <p class="lead">
+        @Html.ActionLink("View Public Files", "ViewPublicFiles", routeValues: null, htmlAttributes: new { @class = "btn btn-lg btn-secondary" })
+        @Html.ActionLink("View My Files", "ViewMyFiles", routeValues: null, htmlAttributes: new { @class = "btn btn-lg btn-secondary" })
+    </p>
+</main>
+

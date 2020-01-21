@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CodeShare.Models.PrivateFileModel>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>My Files</h2>
+
+<p>
+    @Html.ActionLink("Upload New", "File", "Upload")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.ActionLink("View", "ViewMyFile", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
