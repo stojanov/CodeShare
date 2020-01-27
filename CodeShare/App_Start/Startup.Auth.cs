@@ -54,9 +54,9 @@ namespace CodeShare
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "209912346841284",
+               appSecret: "c743392f2c466d4e989f8d2d1a55f449");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

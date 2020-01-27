@@ -33,6 +33,8 @@ namespace CodeShare.Controllers
                     string FileName = Path.GetFileName(file.FileName);
                     string path = Path.Combine(dir, FileName);
 
+                    file.SaveAs(path);
+
                     _dbCtx.PublicUploads.Add(new FileModel
                     {
                         CreatedAt = DateTime.Now, 
@@ -42,7 +44,6 @@ namespace CodeShare.Controllers
 
                     _dbCtx.SaveChanges();
 
-                    file.SaveAs(path);
                 }
 
                 ViewBag.Message = "File Uploaded";
